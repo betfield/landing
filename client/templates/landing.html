@@ -1,43 +1,66 @@
 <template name="landing">
     <!--body id="page-top" class="index"-->
+    
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#page-top">EURO 2016 ennustus</a>
+                </div>
 
-        {{> navbar}}
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="page-scroll hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#how-to-play">Kuidas osaleda?</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#rules">Reeglid</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#contact">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    
         <!-- Header -->
         <header>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="login">
-                            <!--ul class="list-inline">
-                                <li>
-                                    <span class="text">Logi sisse: </span>
+                        <div id="login" class="login">
+                            <h3>Logi sisse: </h3>
+                            <ul>
+                                <li class="fa-stack fa-lg">
+                                    <a href="/login-fb">
+                                        <i class="fa fa-facebook-square fa-stack-2x" ></i>
+                                    </a>    
+                                </li>					  
+                                <li class="fa-stack fa-lg">
+                                    <a href="/login-g+">
+                                        <i class="fa fa-google-plus-square fa-stack-2x"></i>
+                                    </a>
                                 </li>
-                                <li>
-                                    <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                                <li class="fa-stack fa-lg">
+                                    <a href="/login-tw">
+                                        <i class="fa fa-twitter-square fa-stack-2x"></i>
+                                    </a>
                                 </li>
-                                <li>
-                                    <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                                </li>
-                            </ul-->
-                            <span class="text">Logi sisse: </span>
-                            <!--br><br-->
-                            <span class="fa-stack fa-lg">
-                                <a href="#">
-                                    <i class="fa fa-square-o fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x"></i>
-                                </a>    
-                            </span>					  
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-square-o fa-stack-2x"></i>
-                                <i class="fa fa-google fa-stack-1x"></i>
-                            </span>
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-square-o fa-stack-2x"></i>
-                                <i class="fa fa-twitter fa-stack-1x"></i>
-                            </span>
+                            </ul>
                         </div>
                         <img class="img-responsive" src="img/profile.png" alt="">
                     </div>
@@ -60,14 +83,14 @@
                         <img src="img/social.gif" width="180" alt="" >
                         <br>
                         <h4>1 - Logi sisse</h4>
-                        <p>Kasutada saad oma sotsiaalmeedia kontot. Toetatud on <a href="#">Facebook</a>, <a href="#">Google+</a> ja <a href="#">Twitter</a>.</p>
+                        <p>Kasutada saad oma lemmikut sotsiaalmeedia kontot. Toetatud on <a href="/login-fb">Facebook</a>, <a href="/login-g+">Google+</a> ja <a href="/login-tw">Twitter</a>.</p>
                     </div><!--/col-lg-4 -->
 
                     <div class="col-lg-4">
                         <img src="img/pad.png" width="180" alt="">
                         <br>
-                        <h4>2 - Täida ennustus</h4>
-                        <p>Kui kohe ei oska kõiki tulemusi kirja panna või kahtled oma valikutes, siis muretseda pole vaja - saad oma ennustust hiljem lihtsalt muuta.</p>
+                        <h4>2 - Täida ennustused</h4>
+                        <p>Kui kohe ei oska kõiki tulemusi kirja panna või kahtled oma valikutes, siis muretseda pole vaja - saad hiljem oma ennustusi kergesti muuta.</p>
 
                     </div><!--/col-lg-4 -->
 
@@ -75,7 +98,7 @@
                         <img src="img/check.png" width="180" alt="">
                         <br>
                         <h4>3 - Kinnita oma osalus</h4>
-                        <p>Selleks tuleb registreerida oma ennustus ja ära kanda osavõtu tasu €xx. Toetatud on kõik suuremad krediitkaardid ning maksta saad ka Paypal kontolt.</p>
+                        <p>Selleks tuleb registreerida oma ennustus ja ära kanda osavõtu tasu <strong>€15</strong>. Toetatud on kõik suuremad krediitkaardid ning maksta saad ka Paypal kontolt.</p>
 
                     </div><!--/col-lg-4 -->
                 </div><!-- /row -->
@@ -93,55 +116,27 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-lg-offset-2">
-                        <p>Ennustuste registreerimise tähtaeg on 1h enne turniiri esimese mängu algust. Peale seda lukustatakse iga meeskonna esimesed alagrupimängud ning neid ei ole võimalik enam muuta.</p>
+                        <ul>
+                            <li>Ennustuste registreerimise tähtaeg on 1h enne turniiri esimese mängu algust.</li> 
+                            <li>Peale seda lukustatakse iga meeskonna esimesed alagrupimängud ning neid ei ole võimalik enam muuta.</li>
+                            <li>Ennustuste registreerimise tähtaeg on 1h enne turniiri esimese mängu algust.</li>
+                        </ul>
                     </div>
                     <div class="col-lg-4">
-                        <p>Iga õigesti ennustatud mängu tulemus annab 2 punkti. Kui õigesti on ennustatud ka mänguskoor, siis lisandub tulemusele 3 punkti. Kui mänguskoor päris täppi ei läinud, aga väravatevahe sai õige, siis lisandub tulemusele 1 punkt.
-                        Selliselt on võimalik ühe mänguga teenida maksimaalselt 5 punkti...
-                        </p>
+                        <ul>
+                            <li>Ennustuste registreerimise tähtaeg on 1h enne turniiri esimese mängu algust.</li> 
+                            <li>Peale seda lukustatakse iga meeskonna esimesed alagrupimängud ning neid ei ole võimalik enam muuta.</li>
+                            <li>Ennustuste registreerimise tähtaeg on 1h enne turniiri esimese mängu algust.</li>
+                        </ul>
                     </div>
-                    <!--div class="col-lg-8 col-lg-offset-2 text-center">
-                        <a href="#" class="btn btn-lg btn-outline">
-                            <i class="fa fa-download"></i> Download Theme
-                        </a>
-                    </div-->
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-lg-offset-2">
-                        <table class="table-responsive">
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                </td>
-                                <td>
-                                </td>    
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                </td>
-                                <td>
-                                </td>    
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                </td>
-                                <td>
-                                </td>    
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                </td>
-                                <td>
-                                </td>    
-                            </tr>
-                        </table>    
+                    <br>
+                    <div class="col-lg-8 col-lg-offset-2 text-center page-scroll">
+                        <h3>Tekkis huvi?</h3>
+                        <a href="#page-top" class="btn btn-lg btn-outline">
+                            Logi sisse ja loe lähemalt
+                        </a>
                     </div>
                 </div>
             </div>
@@ -167,20 +162,6 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
-                            <!--div class="row control-group">
-                                <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label>Email Address</label>
-                                    <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="row control-group">
-                                <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label>Phone Number</label>
-                                    <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div-->
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label>Sõnum</label>
@@ -254,230 +235,5 @@
                 <i class="fa fa-chevron-up"></i>
             </a>
         </div>
-
-        <!-- Portfolio Modals -->
-        <!--div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <h2>Project Title</h2>
-                                <hr class="star-primary">
-                                <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
-                                <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                                <ul class="list-inline item-details">
-                                    <li>Client:
-                                        <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                        </strong>
-                                    </li>
-                                    <li>Date:
-                                        <strong><a href="http://startbootstrap.com">April 2014</a>
-                                        </strong>
-                                    </li>
-                                    <li>Service:
-                                        <strong><a href="http://startbootstrap.com">Web Development</a>
-                                        </strong>
-                                    </li>
-                                </ul>
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <h2>Project Title</h2>
-                                <hr class="star-primary">
-                                <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                                <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                                <ul class="list-inline item-details">
-                                    <li>Client:
-                                        <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                        </strong>
-                                    </li>
-                                    <li>Date:
-                                        <strong><a href="http://startbootstrap.com">April 2014</a>
-                                        </strong>
-                                    </li>
-                                    <li>Service:
-                                        <strong><a href="http://startbootstrap.com">Web Development</a>
-                                        </strong>
-                                    </li>
-                                </ul>
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <h2>Project Title</h2>
-                                <hr class="star-primary">
-                                <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                                <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                                <ul class="list-inline item-details">
-                                    <li>Client:
-                                        <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                        </strong>
-                                    </li>
-                                    <li>Date:
-                                        <strong><a href="http://startbootstrap.com">April 2014</a>
-                                        </strong>
-                                    </li>
-                                    <li>Service:
-                                        <strong><a href="http://startbootstrap.com">Web Development</a>
-                                        </strong>
-                                    </li>
-                                </ul>
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <h2>Project Title</h2>
-                                <hr class="star-primary">
-                                <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
-                                <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                                <ul class="list-inline item-details">
-                                    <li>Client:
-                                        <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                        </strong>
-                                    </li>
-                                    <li>Date:
-                                        <strong><a href="http://startbootstrap.com">April 2014</a>
-                                        </strong>
-                                    </li>
-                                    <li>Service:
-                                        <strong><a href="http://startbootstrap.com">Web Development</a>
-                                        </strong>
-                                    </li>
-                                </ul>
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <h2>Project Title</h2>
-                                <hr class="star-primary">
-                                <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
-                                <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                                <ul class="list-inline item-details">
-                                    <li>Client:
-                                        <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                        </strong>
-                                    </li>
-                                    <li>Date:
-                                        <strong><a href="http://startbootstrap.com">April 2014</a>
-                                        </strong>
-                                    </li>
-                                    <li>Service:
-                                        <strong><a href="http://startbootstrap.com">Web Development</a>
-                                        </strong>
-                                    </li>
-                                </ul>
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <h2>Project Title</h2>
-                                <hr class="star-primary">
-                                <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
-                                <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                                <ul class="list-inline item-details">
-                                    <li>Client:
-                                        <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                        </strong>
-                                    </li>
-                                    <li>Date:
-                                        <strong><a href="http://startbootstrap.com">April 2014</a>
-                                        </strong>
-                                    </li>
-                                    <li>Service:
-                                        <strong><a href="http://startbootstrap.com">Web Development</a>
-                                        </strong>
-                                    </li>
-                                </ul>
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div-->
-
-    <!--/body-->
+        
 </template>
