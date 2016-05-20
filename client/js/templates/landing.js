@@ -47,3 +47,9 @@ Template.landing.onRendered(function() {
         });
     });
 });
+
+Template.landing.helpers({
+    userCount: function() {
+        return Users.find().count();
+    }
+});
