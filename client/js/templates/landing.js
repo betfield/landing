@@ -24,15 +24,12 @@ function setUserCount() {
             resizeUserCount("300px","200px");
             $('#login').css('padding-top',"0px");
             break;
-        case (x < 751):
-            resizeUserCount("220px","240px");
-            $('#login').css('padding-top',"190px");
-            break;
-        case (x > 750 && x < 975):
-            resizeUserCount("220px","268px");
+        case (x > 709 && x < 975):
+            resizeUserCount("500px","268px");
             $('#login').css('padding-top',"190px");
             break;
         case (x > 974 && x < 1183):
+        console.log(x);
             resizeUserCount("220px","488px");
             $('#login').css('padding-top',"190px");
             break;
