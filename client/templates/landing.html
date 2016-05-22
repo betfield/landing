@@ -43,26 +43,12 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div id="login" class="login">
-                            <span>User count: {{userCount}}</span>
-                            <h3>Logi sisse: </h3>
-                            <ul>
-                                <li class="fa-stack fa-lg">
-                                    <a href="/login-fb">
-                                        <i class="fa fa-facebook-square fa-stack-2x" ></i>
-                                    </a>    
-                                </li>					  
-                                <li class="fa-stack fa-lg">
-                                    <a href="/login-g+">
-                                        <i class="fa fa-google-plus-square fa-stack-2x"></i>
-                                    </a>
-                                </li>
-                                <li class="fa-stack fa-lg">
-                                    <a href="/login-tw">
-                                        <i class="fa fa-twitter-square fa-stack-2x"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                            <a href="/dashboard" class="btn btn-lg btn-outline">
+                                SISENE ENNUSTUSLEHELE
+                                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                            </a>
                         </div>
+                        <p id="user-count" class="user-count">{{userCount}}</p>
                         <img class="img-responsive" src="img/profile.png" alt="">
                     </div>
                 </div>
@@ -84,7 +70,7 @@
                         <img src="img/social.gif" width="180" alt="" >
                         <br>
                         <h4>1 - Logi sisse</h4>
-                        <p>Kasutada saad oma lemmikut sotsiaalmeedia kontot. Toetatud on <a href="/login-fb">Facebook</a>, <a href="/login-g+">Google+</a> ja <a href="/login-tw">Twitter</a>.</p>
+                        <p>Kasutada saad oma lemmikut sotsiaalmeedia kontot. Toetatud on <strong>Facebook</strong>, <strong>Google+</strong> ja <strong>Twitter</strong>.</p>
                     </div><!--/col-lg-4 -->
 
                     <div class="col-lg-4">
@@ -135,7 +121,7 @@
                     <br>
                     <div class="col-lg-8 col-lg-offset-2 text-center page-scroll">
                         <h3>Tekkis huvi?</h3>
-                        <a href="#page-top" class="btn btn-lg btn-outline">
+                        <a href="/dashboard" class="btn btn-lg btn-outline">
                             Logi sisse ja loe lähemalt
                         </a>
                     </div>

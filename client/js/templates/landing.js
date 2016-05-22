@@ -1,4 +1,57 @@
+Template.landing.onCreated(function() {    
+    $(window).resize(function() {
+        setUserCount();
+    });
+});
+
+function setUserCount() {
+    var x = $(window).width();
+    switch (true) {
+        case (x <= 420):
+            resizeUserCount("214px","22px");
+            $('#login').css('padding-top',"0px");
+            break;
+        case (x <= 560):
+            console.log(x);
+            resizeUserCount("300px","66px");
+            $('#login').css('padding-top',"0px");
+            break;
+        case (x <= 640):
+            resizeUserCount("300px","156px");
+            $('#login').css('padding-top',"0px");
+            break;
+        case (x < 710):
+            resizeUserCount("300px","200px");
+            $('#login').css('padding-top',"0px");
+            break;
+        case (x < 751):
+            resizeUserCount("220px","240px");
+            $('#login').css('padding-top',"190px");
+            break;
+        case (x > 750 && x < 975):
+            resizeUserCount("220px","268px");
+            $('#login').css('padding-top',"190px");
+            break;
+        case (x > 974 && x < 1183):
+            resizeUserCount("220px","488px");
+            $('#login').css('padding-top',"190px");
+            break;
+        default:
+            resizeUserCount("220px","690px");
+            $('#login').css('padding-top',"190px");
+            break;
+    }
+}
+
+function resizeUserCount(heigth, width) {
+    $('#user-count').css('top',heigth);
+    $('#user-count').css('left',width);
+    $('#user-count').show();
+}
+
 Template.landing.onRendered(function() {
+    setUserCount();
+
     $('body').attr('id',"page-top");
     $('body').attr('class',"index");
     

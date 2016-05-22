@@ -43,6 +43,31 @@ h6 {
     margin: 0 auto;
 }
 
+.user-count {
+    z-index: 100;
+    position: absolute;
+    color: #0c1c36;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    left: 690px;
+    top: 220px;
+    width: 170px;
+    /* Safari */
+    -webkit-transform: rotate(3.5deg);
+
+    /* Firefox */
+    -moz-transform: rotate(3.5deg);
+
+    /* IE */
+    -ms-transform: rotate(3.5deg);
+
+    /* Opera */
+    -o-transform: rotate(3.5deg);
+
+}
+
 header {
     text-align: left;
     color: #fff;
@@ -83,7 +108,7 @@ header a:focus,
 header a:active,
 header a.active {
     color: #fff;
-    font-size: 40px;
+    
 }
 
 @media(min-width:768px) {
