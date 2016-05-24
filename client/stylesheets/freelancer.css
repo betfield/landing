@@ -76,7 +76,7 @@ header {
 
 header .container {
     padding-top: 100px;
-    padding-bottom: 50px;
+    padding-bottom: 0px;
 }
 
 header img {
@@ -229,6 +229,11 @@ section.how-to-play a.active {
     color: #fff;
     background: 0 0;
     transition: all .3s ease-in-out;
+}
+
+header .btn-outline {
+    margin-top: 0px;
+    margin-bottom: 30px;
 }
 
 .btn-outline:hover,

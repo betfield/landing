@@ -8,33 +8,32 @@ function setUserCount() {
     var x = $(window).width();
     switch (true) {
         case (x <= 420):
-            resizeUserCount("214px","22px");
+            resizeUserCount("225px","22px");
             $('#login').css('padding-top',"0px");
             break;
         case (x <= 560):
             console.log(x);
-            resizeUserCount("300px","66px");
+            resizeUserCount("315px","66px");
             $('#login').css('padding-top',"0px");
             break;
         case (x <= 640):
-            resizeUserCount("300px","156px");
+            resizeUserCount("330px","156px");
             $('#login').css('padding-top',"0px");
             break;
         case (x < 710):
-            resizeUserCount("300px","200px");
+            resizeUserCount("330px","200px");
             $('#login').css('padding-top',"0px");
             break;
-        case (x > 709 && x < 975):
-            resizeUserCount("500px","268px");
+        case (x < 975):
+            resizeUserCount("530px","268px");
             $('#login').css('padding-top',"190px");
             break;
-        case (x > 974 && x < 1183):
-        console.log(x);
-            resizeUserCount("220px","488px");
+        case (x < 1183):
+            resizeUserCount("230px","488px");
             $('#login').css('padding-top',"190px");
             break;
         default:
-            resizeUserCount("220px","690px");
+            resizeUserCount("230px","690px");
             $('#login').css('padding-top',"190px");
             break;
     }
