@@ -19,3 +19,7 @@ Meteor.publish('users', function(filter) {
         subHandle.stop();
     });
 });
+
+Meteor.startup(function() {
+    console.log("Mongo url: ", process.env.MONGO_URL);
+});
