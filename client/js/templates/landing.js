@@ -98,13 +98,22 @@ Template.landing.onRendered(function() {
 });
 
 Template.landing.events({
-    'submit #contactForm': function() {
-        return Meteor.call('sendEmail',
+    'submit #contactForm': function(event, template) {
+        event.preventDefault();
+        
+        Meteor.call('sendEmail',
+            'info@fctwister.ee',
             'admin@fctwister.ee',
-            'karpz@hot.ee',
-            'Hello from Meteor!',
-            'This is a test of Email.send.');
-
+            template.find("#name").value,
+            template.find("#message").value,
+            function(err) {
+                if(err) {
+                    Bert.alert( 'Sõnumi saatmine ebaõnnestus!', 'danger', 'fixed-top', 'fa-frown-o' );
+                } else {
+                    Bert.alert( 'Sõnum saadetud! Täname tagasiside eest.', 'success', 'fixed-top', 'fa-smile-o' );
+                    template.find("form").reset();
+                }
+            });
     }
 });
 
