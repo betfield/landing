@@ -42,8 +42,6 @@ Meteor.methods({
                 });
                 
             console.log("Sending mail..");
-            console.log("To: ", to);
-            console.log("From: ", from);
             console.log("Subject: ", subject);
             console.log("Text: ", text);
         } catch (err) {
