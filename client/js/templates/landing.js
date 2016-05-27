@@ -112,6 +112,7 @@ Template.landing.events({
                 } else {
                     Bert.alert( 'Sõnum saadetud! Täname tagasiside eest.', 'success', 'fixed-top', 'fa-smile-o' );
                     template.find("form").reset();
+                    $(".floating-label-form-group").removeClass("floating-label-form-group-with-value");
                 }
             });
     }

@@ -46,6 +46,7 @@ Meteor.methods({
             console.log("Text: ", text);
         } catch (err) {
             console.log("Sending mail failed!", "Subject:" + subject, "Text: " + text);
+            console.log(err.stack);
         }
     }
 });
