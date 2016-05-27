@@ -22,4 +22,23 @@ Meteor.publish('users', function(filter) {
 
 Meteor.startup(function() {
     console.log("Mongo url: ", process.env.MONGO_URL);
+    process.env.MAIL_URL = "smtp://admin@fctwister.ee:esoteric@mail.fctwister.ee:25";
+    console.log("MAIL url: ", process.env.MAIL_URL);
+});
+
+Meteor.methods({
+    sendEmail: function (to, from, subject, text) {
+        check([to, from, subject, text], [String]);
+
+        // Let other method calls from the same client start running,
+        // without waiting for the email sending to complete.
+        this.unblock();
+
+        Email.send({
+            to: to,
+            from: from,
+            subject: subject,
+            text: text
+        });
+    }
 });

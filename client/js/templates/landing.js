@@ -97,6 +97,17 @@ Template.landing.onRendered(function() {
     });
 });
 
+Template.landing.events({
+    'submit #contactForm': function() {
+        return Meteor.call('sendEmail',
+            'admin@fctwister.ee',
+            'karpz@hot.ee',
+            'Hello from Meteor!',
+            'This is a test of Email.send.');
+
+    }
+});
+
 Template.landing.helpers({
     userCount: function() {
         return Users.find().count();

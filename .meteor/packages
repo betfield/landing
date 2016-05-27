@@ -20,3 +20,6 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 twbs:bootstrap
 iron:router
 fortawesome:fontawesome
+email
+themeteorchef:bert
+check
