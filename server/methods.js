@@ -45,7 +45,7 @@ Meteor.methods({
             console.log("Subject: ", subject);
             console.log("Text: ", text);
         } catch (err) {
-            throw new Meteor.Error(123, 'Error 123: Sending of email failed');
+            console.log("Sending mail failed!", "Subject:" + subject, "Text: " + text);
         }
     }
 });
