@@ -1,50 +1,3 @@
-Template.landing.onCreated(function() {    
-    $(window).resize(function() {
-        setUserCount();
-    });
-});
-
-function setUserCount() {
-    var x = $(window).width();
-    switch (true) {
-        case (x <= 420):
-            resizeUserCount("225px","22px");
-            $('#login').css('padding-top',"0px");
-            break;
-        case (x <= 560):
-            console.log(x);
-            resizeUserCount("315px","66px");
-            $('#login').css('padding-top',"0px");
-            break;
-        case (x <= 640):
-            resizeUserCount("330px","156px");
-            $('#login').css('padding-top',"0px");
-            break;
-        case (x < 710):
-            resizeUserCount("330px","200px");
-            $('#login').css('padding-top',"0px");
-            break;
-        case (x < 975):
-            resizeUserCount("530px","268px");
-            $('#login').css('padding-top',"190px");
-            break;
-        case (x < 1183):
-            resizeUserCount("230px","488px");
-            $('#login').css('padding-top',"190px");
-            break;
-        default:
-            resizeUserCount("230px","690px");
-            $('#login').css('padding-top',"190px");
-            break;
-    }
-}
-
-function resizeUserCount(heigth, width) {
-    $('#user-count').css('top',heigth);
-    $('#user-count').css('left',width);
-    $('#user-count').show();
-}
-
 Template.landing.onRendered(function() {
     setUserCount();
 
@@ -103,7 +56,7 @@ Template.landing.events({
         
         Meteor.call('sendEmail',
             'info@fctwister.ee',
-            'admin@fctwister.ee',
+            'info@fctwister.ee',
             template.find("#name").value,
             template.find("#message").value,
             function(err) {

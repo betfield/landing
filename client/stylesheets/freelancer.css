@@ -18,13 +18,13 @@ p.small {
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #3498db;
+    color: #ff3d3d;
     background-color: transparent;
 }
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-    color: #3498db;
+    color: #ff3d3d;
     background-color: transparent;
 }
 
@@ -71,7 +71,7 @@ h6 {
 header {
     text-align: left;
     color: #fff;
-    background: #3498db;
+    background: #ff3d3d;
 }
 
 header .container {
@@ -178,7 +178,7 @@ section h2 {
 
 section.rules {
     color: #fff;
-    background: #3498db;
+    background: #ff3d3d;
     font-size: 20px;
 }
 
@@ -219,7 +219,7 @@ section.how-to-play a:hover,
 section.how-to-play a:focus,
 section.how-to-play a:active,
 section.how-to-play a.active {
-    color: #3498db;
+    color: #ff3d3d;
 }
 
 .btn-outline {
@@ -241,7 +241,7 @@ header .btn-outline {
 .btn-outline:active,
 .btn-outline.active {
     border: solid 2px #fff;
-    color: #3498db;
+    color: #ff3d3d;
     background: #fff;
 }
 
@@ -294,7 +294,7 @@ header .btn-outline {
 }
 
 .floating-label-form-group-with-focus label {
-    color: #3498db;
+    color: #ff3d3d;
 }
 
 form .row:first-child .floating-label-form-group {
