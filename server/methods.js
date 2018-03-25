@@ -1,6 +1,8 @@
 Meteor.publish('users', function(filter) {
 	var self = this;
     
+    Meteor._sleepForMs(2000);
+
     var subHandle = Users.find(filter || {}).observeChanges({
         added: function(id, fields) {
             self.added("users", id, fields);
@@ -26,27 +28,32 @@ Meteor.startup(function() {
 });
 
 Meteor.methods({
-    sendEmail: function (to, from, subject, text) {
-        check([to, from, subject, text], [String]);
-        var mailSent;
+    sendEmail: function (subject, text) {
+        check([subject, text], [String]);
+        let mailSent;
         // Let other method calls from the same client start running,
         // without waiting for the email sending to complete.
         
         try {
-            this.unblock();
-                Email.send({
-                    to: to,
-                    from: from,
-                    subject: subject,
-                    text: text
-                });
-                
             console.log("Sending mail..");
             console.log("Subject: ", subject);
             console.log("Text: ", text);
+
+            this.unblock();
+            
+            Email.send({
+                to: 'info@fctwister.ee',
+                from: 'info@fctwister.ee',
+                subject: subject,
+                text: text
+            });
+            
+            console.log("Sending mail successful!");
         } catch (err) {
             console.log("Sending mail failed!", "Subject:" + subject, "Text: " + text);
             console.log(err.stack);
+            throw new Meteor.Error("sending-failed",  "Sending mail failed!", "[Email] Subject:" + subject + "; [Email] Text: " + text);
         }
+
     }
 });
